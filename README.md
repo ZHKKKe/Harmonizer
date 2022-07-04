@@ -17,7 +17,8 @@ Image and Video Harmonization (ECCV 2022)</i></p>
   <a href="https://youtu.be/NS8f-eJY9cc">Enhancer Result Video</a>
 </p>
 
-<div align="center"><b>Harmonizer</b> is a <b>lightweight</b> model enabled image/video harmonization <b>up to 4K resolution</b>.</div>
+<div align="center"><b>Harmonizer</b> is a <b>lightweight (20MB)</b> model enabled image/video harmonization up to <b>8K</b> resolution.</div>
+<div align="center">With GPUs, Harmonizer has <b>real-time</b> performance at <b>Full HD</b> resolution.</div>
 <img src="doc/gif/harmonizer.gif" width="100%">
 
 <div align="center"><b>Enhancer</b> is a model applied the Harmonizer architecture for image/video color enhancement.</div>

@@ -3,3 +3,4 @@ numpy
 Pillow
 argparse
 scikit-image == 0.19.2
+kornia
