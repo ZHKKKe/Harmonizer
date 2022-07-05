@@ -4,7 +4,7 @@
 Image and Video Harmonization (ECCV 2022)</i></p>
 
 <p align="center">
-  <a href="#paper">Paper</a> |
+  <a href="https://arxiv.org/abs/2207.01322">Paper</a> |
   <a href="#demo">Demo</a> |
   <a href="#code">Code</a> |
   <a href="#license">License</a> |
@@ -48,7 +48,7 @@ We provide offline demos for image/video harmonization/enhancement.
 
 
 ## Code
-We provide PyTorch validation code to reproduce the iHarmony4 results reported in our [paper](), please:
+We provide PyTorch validation code to reproduce the iHarmony4 results reported in our [paper](https://arxiv.org/abs/2207.01322), please:
 
 1. Download the Harmonizer model pre-trained on the iHarmony4 dataset from [this link](https://drive.google.com/file/d/15XGPQHBppaYGnhsP9l7iOGZudXNw1WbA/view?usp=sharing) and put it in the folder `./pretrained`.
 
@@ -68,7 +68,7 @@ We provide PyTorch validation code to reproduce the iHarmony4 results reported i
     ```
     - You can change `--datasets` to validate a specific subset.  
     - You can remove `--metric-size` to calculate the metrics without resizing the outputs.
-    - The metric values may slightly different from our [paper]() due to the dependency versions.
+    - The metric values may slightly different from our [paper](https://arxiv.org/abs/2207.01322) due to the dependency versions.
 
 ## License
 This project is released under the [Creative Commons Attribution NonCommercial ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license.
