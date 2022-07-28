@@ -26,6 +26,12 @@ Image and Video Harmonization (ECCV 2022)</i></p>
 
 ---
 
+## To Do
+
+According to the feedback/questions I received, the following contents will be updated in the future, but it may take a while:
+- [ ] Release training code
+- [ ] Release a more robust pre-trained Enhancer model
+
 ## Demo
 
 In our demos, the <b>Harmonizer</b> model is trained on the *iHarmony4* dataset, while the <b>Enhancer</b> model is trained on the *FiveK + HDRPlus* datasets.
