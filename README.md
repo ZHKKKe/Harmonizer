@@ -29,8 +29,8 @@ Image and Video Harmonization (ECCV 2022)</i></p>
 ## To Do
 
 According to the feedback/questions I received, the following contents will be updated in the future, but it may take a while:
-- [ ] Release training code
-- [ ] Release a more robust pre-trained Enhancer model
+- [ ] Release training code (scheduled Oct. 2022)
+- [ ] Release a more robust pre-trained Enhancer model (scheduled Nov. 2022)
 
 ## Demo
 
