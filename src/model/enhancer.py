@@ -36,5 +36,5 @@ class Enhancer(nn.Module):
         assert len(arguments) == len(self.filter_types)
 
         arguments = [torch.clamp(arg, -1, 1).view(-1, 1, 1, 1) for arg in arguments]
-        return self.performer.restore(x, mask, arguments)[-1]
+        return self.performer.restore(x, mask, arguments)
     

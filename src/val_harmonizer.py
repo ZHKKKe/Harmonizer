@@ -146,7 +146,7 @@ if __name__ == '__main__':
                     _comp, _mask, _image = _comp.cuda(), _mask.cuda(), _image.cuda()
 
             with torch.no_grad():
-                _harmonized = harmonizer.restore_image(_comp, _mask, arguments)
+                _harmonized = harmonizer.restore_image(_comp, _mask, arguments)[-1]
 
             # calculate metrics
             mse, fmse, psnr, ssim = calc_metrics(_harmonized, _image, _mask)

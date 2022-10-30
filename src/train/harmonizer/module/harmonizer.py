@@ -21,10 +21,31 @@ class Harmonizer(nn.Module):
             Filter.HIGHLIGHT,
             Filter.SHADOW,
         ]
+        self.filter_argument_ranges = [
+            0.3,
+            0.5,
+            0.5,
+            0.6,
+            0.4,
+            0.4,
+        ]
 
         self.backbone = EfficientBackbone.from_name('efficientnet-b0')
         self.regressor = CascadeArgumentRegressor(1280, 160, 1, len(self.filter_types))
         self.performer = FilterPerformer(self.filter_types)
+
+        for m in self.modules():
+            if isinstance(m, nn.Conv2d):
+                self._init_conv(m)
+            elif isinstance(m, nn.BatchNorm2d) or isinstance(m, nn.InstanceNorm2d):
+                self._init_norm(m)
+
+        self.backbone = EfficientBackbone.from_pretrained('efficientnet-b0')
+
+    def forward(self, comp, mask):
+        arguments = self.predict_arguments(comp, mask)
+        pred = self.restore_image(comp, mask, arguments)
+        return pred
 
     def predict_arguments(self, comp, mask):
         comp = F.interpolate(comp, self.input_size, mode='bilinear', align_corners=False)
@@ -42,3 +63,21 @@ class Harmonizer(nn.Module):
         
         arguments = [torch.clamp(arg, -1, 1).view(-1, 1, 1, 1) for arg in arguments]
         return self.performer.restore(comp, mask, arguments)
+
+    def adjust_image(self, image, mask, arguments):
+        assert len(arguments) == len(self.filter_types)
+
+        arguments = [(torch.clamp(arg, -1, 1) * r).view(-1, 1, 1, 1) \
+            for arg, r in zip(arguments, self.filter_argument_ranges)]
+        return self.performer.adjust(image, mask, arguments)
+
+    def _init_conv(self, conv):
+        nn.init.kaiming_uniform_(
+            conv.weight, a=0, mode='fan_in', nonlinearity='relu')
+        if conv.bias is not None:
+            nn.init.constant_(conv.bias, 0)
+
+    def _init_norm(self, bn):
+        if bn.weight is not None:
+            nn.init.constant_(bn.weight, 1)
+            nn.init.constant_(bn.bias, 0)

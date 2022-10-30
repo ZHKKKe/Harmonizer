@@ -70,7 +70,7 @@ if __name__ == '__main__':
         # harmonization
         with torch.no_grad():
             arguments = harmonizer.predict_arguments(comp, mask)
-            harmonized = harmonizer.restore_image(comp, mask, arguments)
+            harmonized = harmonizer.restore_image(comp, mask, arguments)[-1]
 
         # save the result
         harmonized = np.transpose(harmonized[0].cpu().numpy(), (1, 2, 0)) * 255

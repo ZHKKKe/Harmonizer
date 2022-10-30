@@ -1,0 +1,5 @@
+numpy
+scipy
+Pillow
+pyyaml
+opencv-python

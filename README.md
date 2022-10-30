@@ -26,12 +26,6 @@ Image and Video Harmonization (ECCV 2022)</i></p>
 
 ---
 
-## To Do
-
-According to the feedback/questions I received, the following contents will be updated in the future, but it may take a while:
-- [ ] Release training code (scheduled in Oct. 2022)
-- [ ] Release a more robust pre-trained Enhancer model (scheduled in Nov. 2022)
-
 ## Demo
 
 In our demos, the <b>Harmonizer</b> model is trained on the *iHarmony4* dataset, while the <b>Enhancer</b> model is trained on the *FiveK + HDRPlus* datasets.
@@ -54,6 +48,15 @@ We provide offline demos for image/video harmonization/enhancement.
 
 
 ## Code
+
+### Training
+
+The training code is released in the folder `./src/train`.  
+Refer to [README.md](src/train/README.md) for more details about training.
+
+
+### Validation
+
 We provide PyTorch validation code to reproduce the iHarmony4 results reported in our [paper](https://arxiv.org/abs/2207.01322), please:
 
 1. Download the Harmonizer model pre-trained on the iHarmony4 dataset from [this link](https://drive.google.com/file/d/15XGPQHBppaYGnhsP9l7iOGZudXNw1WbA/view?usp=sharing) and put it in the folder `./pretrained`.

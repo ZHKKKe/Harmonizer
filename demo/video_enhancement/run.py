@@ -109,7 +109,7 @@ if __name__ == '__main__':
                     for i, (ema_argument, argument) in enumerate(zip(ema_arguments, arguments)):
                         ema_arguments[i] = ema * ema_argument + (1 - ema) * argument
 
-                enhanced = enhancer.restore_image(original, mask, ema_arguments)
+                enhanced = enhancer.restore_image(original, mask, ema_arguments)[-1]
 
             enhanced = np.transpose(enhanced[0].cpu().numpy(), (1, 2, 0)) * 255
             enhanced = cv2.cvtColor(enhanced.astype('uint8'), cv2.COLOR_RGB2BGR)

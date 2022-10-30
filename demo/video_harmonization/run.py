@@ -128,7 +128,7 @@ if __name__ == '__main__':
                     for i, (ema_argument, argument) in enumerate(zip(ema_arguments, arguments)):
                         ema_arguments[i] = ema * ema_argument + (1 - ema) * argument
 
-                harmonized = harmonizer.restore_image(comp, mask, ema_arguments)
+                harmonized = harmonizer.restore_image(comp, mask, ema_arguments)[-1]
 
             comp = np.transpose(comp[0].cpu().numpy(), (1, 2, 0)) * 255
             comp = cv2.cvtColor(comp.astype('uint8'), cv2.COLOR_RGB2BGR)

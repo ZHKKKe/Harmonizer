@@ -67,7 +67,7 @@ if __name__ == '__main__':
         # enhancement
         with torch.no_grad():
             arguments = enhancer.predict_arguments(original, mask)
-            enhanced = enhancer.restore_image(original, mask, arguments)
+            enhanced = enhancer.restore_image(original, mask, arguments)[-1]
 
         # save the result
         enhanced = np.transpose(enhanced[0].cpu().numpy(), (1, 2, 0)) * 255
