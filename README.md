@@ -35,7 +35,7 @@ Try our online demos for fun without code!
 
 | Image Harmonization | Image Enhancement |
 | :---: | :---: |
-| [Online Demo](https://zhke.io/#/?harmonizer_demo) | [Online Demo](https://zhke.io/#/?enhancer_demo) |
+| [Online Demo](https://zhke.io/?harmonizer_demo) | [Online Demo](https://zhke.io/?enhancer_demo) |
 
 <img src="doc/gif/online_demo.gif" width="100%">
 
